@@ -3,14 +3,19 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: white;
-  background-color:#030615;
+  background-color: #030615;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 #root {
@@ -19,28 +24,23 @@
   display: relative;
 }
 
-.imgContainer{
+.imgContainer {
   display: flex;
   flex-direction: column;
-  max-height:100vh;
+  max-height: 100vh;
+  width: 100%;
 }
 
-.bgImage{
+.bgImage {
   width: 100%;
   height: 100%;
   flex: 1;
   object-fit: cover;
 }
 
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-footer{
+footer {
   position: fixed;
-  bottom:0;
+  bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
@@ -74,7 +74,7 @@ footer button {
   cursor: pointer;
 }
 
-footer button {
+footer button i {
   font-size: 1.3rem;
 }
 
@@ -86,10 +86,10 @@ footer button:hover {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to top, #030615,rgba(255,255,255,0));
+  background: linear-gradient(to top, #030615, rgba(255, 255, 255, 0));
 }
 
-.sidebar{
+.sidebar {
   position: fixed;
   inset: 0;
   display: flex;
@@ -97,14 +97,14 @@ footer button:hover {
   z-index: 10;
 }
 
-.bgOverlay{
+.bgOverlay {
   position: absolute;
   inset: 0;
   background: #030615;
   opacity: 0.6;
 }
 
-.sidebarContents{
+.sidebarContents {
   z-index: 15;
   position: relative;
   display: flex;
@@ -117,19 +117,18 @@ footer button:hover {
   max-width: 800px;
   margin-left: auto;
   background: #030615;
-  
 }
 
-.sidebarContents h2{
+.sidebarContents h2 {
   font-weight: 200;
   font-size: 1.4rem;
 }
 
-.sidebarContents div{
-  flex:1;
+.sidebarContents div {
+  flex: 1;
 }
 
-.sidebarContents button{
+.sidebarContents button {
   background: transparent;
   color: white;
   border: none;
@@ -140,10 +139,11 @@ footer button:hover {
   padding: 1rem 0;
 }
 
-.sidebarContents button:hover{
-  opacity: 0.7;}
+.sidebarContents button:hover {
+  opacity: 0.7;
+}
 
-.descriptionContainer{
+.descriptionContainer {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -154,39 +154,47 @@ footer button:hover {
   font-weight: 200;
 }
 
-.LoadingState {
+.loadingState {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
 }
 
-.LoadingState i{
+.loadingState i {
   opacity: 0.2;
   font-size: 3rem;
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin{
+@keyframes spin {
   from {
-    transform :rotate(0deg);
+    transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-@media (min-width: 640px){
-  .sidebar{
+
+@media (min-width: 640px) {
+  .sidebar {
     position: relative;
     inset: unset;
     min-width: 30%;
-    max-height:100vh;
+    max-height: 100vh;
     box-shadow: 0 0 40px 1px #030615;
   }
 
-  .sidebarContents{
+  .sidebarContents {
     margin: unset;
     width: 100%;
+  }
+
+  .bgOverlay {
+    right: 0;
+    left: unset;
+    width: 100vw;
   }
 }
